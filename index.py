@@ -1,5 +1,5 @@
 #importar el flask
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -9,7 +9,8 @@ app = Flask(__name__)
 
 #funcion con el saludo
 def bienvenida():
-    return "Bienvenidos al curso de Flask"
+    #una variable se define
+    return render_template('index.html')
 
 
 #definir otra ruta

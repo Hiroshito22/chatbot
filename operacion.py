@@ -34,3 +34,16 @@ def CalculaSumaInt(n1=0,n2=0):
         return f"La suma es {n1}"
     else:
         return f"<h1>La suma es: {n1+n2}</h1>"
+
+#definir la ruta con una variable
+@app.route('/alerta/<path:codigo>')
+#funcion con el saludo
+def MostrarAlerta(codigo):
+    return f'<code>{codigo}</code>'
+#Habilitando la etiqueta segura
+from markupsafe import escape
+#definir la ruta con una variable
+@app.route('/mostraretiqueta/<path:codigo>')
+#funcion con el saludo
+def MostrarEtiqueta(codigo):
+    return f'<code>{escape(codigo)}</code>'
